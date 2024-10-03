@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snippet View</title>
+</head>
+<body>
+    <h1>Snippet View</h1>
+    {% if snippet %}
+        <p>{{ snippet }}</p>
+    {% else %}
+        <form action="/decrypt/{{ id }}" method="post">
+            <input type="text" name="secret" required placeholder="Enter secret to decrypt">
+            <br>
+            <button type="submit">Decrypt</button>
+        </form>
+        <p>Snippet is encrypted.</p>
+    {% endif %}
+    <a href="/">Back to create snippet</a>
+</body>
+</html>
